@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApicrud.Data;
 using WebApicrud.Models;
@@ -16,7 +16,7 @@ namespace WebApicrud.Controllers
             _db = db;
         }
         //--------------------------
-        //show all data
+        //show all data   .get('http://kiwisolution1.somee.com/api/Students')
         [HttpGet]
         public IActionResult GetAll()
         {//try + tab tab 2time tab key press
@@ -58,7 +58,7 @@ namespace WebApicrud.Controllers
         }
 
         //---------------------
-        //update by id
+        //update by id   .put(`http://kiwisolution1.somee.com/api/Students/id?id=${id}`, { id, name })
         [HttpPut("id")]
         public IActionResult update(int id, [FromBody] Students obj)
         {
@@ -87,7 +87,7 @@ namespace WebApicrud.Controllers
             }
         }
         //---------------------------
-        //add student
+        //add student   .post('http://kiwisolution1.somee.com/api/Students', newStudent)
         [HttpPost]
         public IActionResult Post(Students obj) 
         {
@@ -111,7 +111,7 @@ namespace WebApicrud.Controllers
             }
         }
         //------------------------------------
-        //delete by id
+        //delete by id .delete(`http://kiwisolution1.somee.com/api/Students/id?id=${id}`)
         [HttpDelete("id")]
         public IActionResult Delete(int id)
         {
